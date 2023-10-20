@@ -20,6 +20,6 @@ public class Boss extends Employee {
 
     public static Assigment setAssignment(Task task){
         // если департаментов несколько, надо делать предварительную проверку на возможность назначить задачу по Skill
-        return TaskPlanner.planTask(task);
+        return TaskPlanner.planTasks(task);
     }
 }

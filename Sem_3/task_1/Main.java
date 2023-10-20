@@ -74,7 +74,7 @@ public class Main {
             employeeService.startTaskByEmployee(assigment8.getEmployee(), assigment8);
         }
 
-        // назначение боссом
+        // назначение таска боссом
         Assigment assigment6 = employee4.setAssignment(task2);
         Assigment assigment7 = employee4.setAssignment(task4);
 
