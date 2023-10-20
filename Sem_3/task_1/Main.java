@@ -51,12 +51,12 @@ public class Main {
         //назначение нескольких задач на одного
         TaskPlanner.setEmployees(employees);
 
-        Assigment assigment1 = TaskPlanner.planTasks(task1);        
-        Assigment assigment3 = TaskPlanner.planTasks(task3);
-        Assigment assigment5 = TaskPlanner.planTasks(task5);
+        Assigment assigment1 = TaskPlanner.planTask(task1);        
+        Assigment assigment3 = TaskPlanner.planTask(task3);
+        Assigment assigment5 = TaskPlanner.planTask(task5);
 
         //задача без исполнителя
-        Assigment assigment8 = TaskPlanner.planTasks(task8);
+        Assigment assigment8 = TaskPlanner.planTask(task8);
 
         EmployeeService employeeService = new EmployeeService();
         
