@@ -18,4 +18,12 @@ abstract public class AssigmentRepository {
         return assigmentList;
     }
 
+    static public boolean checkAssignment(Assigment assigment){
+        boolean result = false;
+        if (assigment != null){
+            result = true;
+        }
+        return result;
+    }
+
 }
