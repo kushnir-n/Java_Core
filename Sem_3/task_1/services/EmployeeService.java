@@ -1,8 +1,8 @@
-package Sem_3.task_1.classes;
-
+package Sem_3.task_1.services;
 import java.time.LocalDate;
 import java.util.List;
-
+import Sem_3.task_1.classes.Assigment;
+import Sem_3.task_1.classes.Employee;
 import Sem_3.task_1.enums.Status;
 import Sem_3.task_1.repository.AssigmentRepository;
 

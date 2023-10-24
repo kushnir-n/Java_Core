@@ -8,11 +8,21 @@ public class Assigment implements Comparable<Assigment> {
     private LocalDate factStartDate;
     private LocalDate factEndDate;
     private Status status;
+    private final int id;
+    private static int count;
 
     public Assigment(Employee employee, Task task) {
         this.employee = employee;
         this.task = task;
         this.status = Status.NEW;
+        this.id = count++;
+    }
+
+    public Assigment(Employee employee, Task task, Status status, int id) {
+        this.employee = employee;
+        this.task = task;
+        this.status = status;
+        this.id = id;
     }
 
     public Employee getEmployee() {
@@ -47,11 +57,21 @@ public class Assigment implements Comparable<Assigment> {
         this.status = status;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
-        return "Assigment [employee=" + employee + ", task=" + task + ", factStartDate=" + factStartDate
-                + ", factEndDate=" + factEndDate + ", status=" + status + "]";
-    } 
+        return "Assigment{" +
+                "id = " + id +
+                ", employee=" + employee + "\n" +
+                ", task=" + task + "\n" +
+                // ", factStartDate=" + factStartDate +
+                // ", factEndDate=" + factEndDate +
+                ", status=" + status +
+                '}';
+    }
 
     @Override
     public int compareTo(Assigment assigment) {

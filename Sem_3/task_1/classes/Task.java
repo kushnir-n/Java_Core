@@ -13,8 +13,20 @@ public class Task {
     private Skill skill;
     private Priority priority;
     private int length;
+    private final int id;
+    private static int count = 0;
 
-    
+    public Task(String name, int rank, LocalDate creatDate, LocalDate dueDate, Skill skill, Priority priority, int length, int id) {
+        this.name = name;
+        this.rank = rank;
+        this.createDate = creatDate;
+        this.dueDate = dueDate;
+        this.skill = skill;
+        this.priority = priority;
+        this.length = length;
+        this.id = id;
+    }
+
     public Task(String name, int rank, LocalDate dueDate, Skill skill, Priority priority, int length) {
         this.name = name;
         this.rank = rank;
@@ -23,7 +35,7 @@ public class Task {
         this.skill = skill;
         this.priority = priority;
         this.length = length;
-
+        this.id = count++;
     }
 
     public String getName() {
@@ -98,13 +110,24 @@ public class Task {
         this.length = length;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
-        return "Task [name=" + name + ", rank=" + rank + ", createDate=" + createDate + ", dueDate=" + dueDate
-                + ", skill=" + skill + ", priority=" + priority + ", length=" + length + "]";
+        return "Task{" +
+                "id = " + id +
+                ", name='" + name + '\'' +
+                ", createDate=" + createDate +
+                ", dueDate=" + dueDate +
+                ", priority=" + priority +
+                ", skill=" + skill +
+                '}';
     }
+}
 
 
 
     
-}
+

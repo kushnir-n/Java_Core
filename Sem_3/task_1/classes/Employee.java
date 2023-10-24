@@ -10,15 +10,26 @@ public class Employee {
     private Department department;
     private Skill skill;
     private boolean working = false;
+    private final int id;
+    private static int count;
     
-    public Employee(String lastName, String firstName, LocalDate birthDate, double salary, Department department,
-            Skill skill) {
+    public Employee(String lastName, String firstName, LocalDate birthDate, double salary, Department department, Skill skill) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.birthDate = birthDate;
         this.salary = salary;
         this.department = department;
         this.skill = skill;
+        this.id = count++;
+    }
+
+    public Employee(String lastName, String firstName, LocalDate birthDate, double salary, Skill skill, int id) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.birthDate = birthDate;
+        this.salary = salary;
+        this.skill = skill;
+        this.id = id;
     }
 
     public String getLastName() {
@@ -65,10 +76,20 @@ public class Employee {
         this.working = working;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
-        return "Employee [lastName=" + lastName + ", firstName=" + firstName + ", birthDate=" + birthDate + ", salary="
-                + salary + ", department=" + department + ", skill=" + skill + ", working=" + working + "]";
+        return "Employee{" +
+                "id= " + id +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", birthDate=" + birthDate +
+                ", salary=" + salary +
+                ", skill=" + skill +
+                '}';
     }
 
     public void increaseSalary(double amount) {
